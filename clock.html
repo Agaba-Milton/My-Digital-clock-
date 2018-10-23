@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Digital Clock</title>
+
+    <style type="text/css">
+        #clock {
+            width: 900px;
+            margin: 200px;
+            text-align: center;
+            font-size: 150px;
+            background: white;
+            padding-left: 20PX;
+            padding-right: 20px;
+            padding-top: 95px;
+            padding-bottom: 95px;
+            border-radius: 205px;
+            opacity: .8;
+            color:black;
+        }
+
+        body{
+            background-image: url(mmm.png);
+            background-size: cover;
+        }
+     
+    </style>
+</head>
+
+
+<body>
+
+    <div id="clock">10:10:01</div>
+    
+
+
+    <script>
+            setInterval(displayclock, 500);
+            function displayclock () {
+
+    // INDICATING VARIABLES FOR HOURS(hrs), MINUTES(min), SECONDS(sec)
+
+                                var time = new Date();
+                                var hrs = time.getHours();
+                                var min = time.getMinutes();
+                                var sec = time.getSeconds();
+                                time.innerHTML = Date();
+                                var en = 'AM';
+
+                         // SHOWING CURRENT DATE AND TIME PROCEDURE//
+                         
+                                var time = document.querySelector('div');
+                                time.addEventListener('click', function(){
+                                    time.innerHTML = Date();
+                                })
+                                
+                                if (hrs > 12) {
+                                        en = 'PM';
+                                }
+
+                                
+                                
+                                //if (hrs > 12) {
+                               //     hrs = hrs - 12;
+
+                                //}
+
+                               // if (hrs == 0) {
+                                   // hrs = 12;
+                               // }
+
+                                
+                               
+
+                                document.getElementById( 'clock').innerHTML = hrs + ':' +  min + ':' +sec + ' ' + en;
+
+            }      
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
